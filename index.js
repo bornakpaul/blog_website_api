@@ -25,6 +25,7 @@ const storage = multer.diskStorage({
      }
 })  
 
+// storing the image locally under images folder
 const upload = multer({storage: storage});
 app.post("/api/upload", upload.single("file"), (req, res) => {
      res.status(200).json("File has been uploaded")
